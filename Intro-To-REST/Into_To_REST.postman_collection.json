@@ -1,0 +1,1824 @@
+{
+	"info": {
+		"_postman_id": "fee08f69-a171-4f64-8a21-97df35ee4924",
+		"name": "Into_To_REST",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22793522"
+	},
+	"item": [
+		{
+			"name": "NewsAPI",
+			"item": [
+				{
+					"name": "Bitcoin",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+									"    .tftable tr {background-color:#ffffff;}",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+									"    .tftable tr:hover {background-color:#e0ffff;}",
+									"</style>",
+									"",
+									"<table class=\"tftable\" border=\"1\">",
+									"    <tr>",
+									"        <th>Source Name</th>",
+									"        <th>Author</th>",
+									"        <th>Title</th>",
+									"        <th>Description</th>",
+									"        <th>URL</th>",
+									"        <th>Published At</th>",
+									"        <th>Image URL</th>",
+									"        <th>Content</th>",
+									"    </tr>",
+									"    ",
+									"    {{#each response.articles}}",
+									"        <tr>",
+									"            <td>{{source.name}}</td>",
+									"            <td>{{author}}</td>",
+									"            <td>{{title}}</td>",
+									"            <td>{{description}}</td>",
+									"            <td>{{url}}</td>",
+									"            <td>{{publishedAt}}</td>",
+									"            <td>{{urlToImage}}</td>",
+									"            <td>{{content}}</td>",
+									"        </tr>",
+									"    {{/each}}",
+									"</table>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    return {response: pm.response.json()}",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{newsKey\n}}",
+								"type": "text"
+							},
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{Base}}?q=bitcoin",
+							"host": [
+								"{{Base}}"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "bitcoin"
+								},
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Apple",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+									"    .tftable tr {background-color:#ffffff;}",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+									"    .tftable tr:hover {background-color:#e0ffff;}",
+									"</style>",
+									"",
+									"<table class=\"tftable\" border=\"1\">",
+									"    <tr>",
+									"        <th>Source Name</th>",
+									"        <th>Title</th>",
+									"        <th>Description</th>",
+									"        <th>Published At</th>",
+									"    </tr>",
+									"    ",
+									"    {{#each response.articles}}",
+									"        <tr>",
+									"            <td>{{source.name}}</td>",
+									"            <td>{{title}}</td>",
+									"            <td>{{description}}</td>",
+									"            <td>{{publishedAt}}</td>",
+									"        </tr>",
+									"    {{/each}}",
+									"</table>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    return { response: pm.response.json() }",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{newsKey\n}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Base}}?q=apple",
+							"host": [
+								"{{Base}}"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "apple"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Tesla",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+									"    .tftable tr {background-color:#ffffff;}",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+									"    .tftable tr:hover {background-color:#e0ffff;}",
+									"</style>",
+									"",
+									"<table class=\"tftable\" border=\"1\">",
+									"    <tr>",
+									"        <th>Source</th>",
+									"        <th>Author</th>",
+									"        <th>Title</th>",
+									"        <th>Description</th>",
+									"        <th>Published At</th>",
+									"    </tr>",
+									"    ",
+									"    {{#each response.articles}}",
+									"        <tr id=row_{{@key}}>",
+									"            <td>{{source.name}}</td>",
+									"            <td>{{author}}</td>",
+									"            <td>{{title}}</td>",
+									"            <td>{{description}}</td>",
+									"            <td>{{publishedAt}}</td>",
+									"        </tr>",
+									"    {{/each}}",
+									"</table>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    return {response: pm.response.json()}",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{newsKey\n}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Base}}?q=tesla",
+							"host": [
+								"{{Base}}"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "tesla"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Dollar",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{newsKey\n}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Base}}?q=dollar",
+							"host": [
+								"{{Base}}"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "dollar"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Palestine",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{newsKey\n}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{Base}}?q=palestine",
+							"host": [
+								"{{Base}}"
+							],
+							"query": [
+								{
+									"key": "q",
+									"value": "palestine"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Swapi",
+			"item": [
+				{
+					"name": "Planets",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"// Test for response schema validation",
+									"pm.test(\"Response schema is valid\", function () {",
+									"  var schema = {",
+									"    type: \"object\",",
+									"    properties: {",
+									"      name: { type: \"string\" },",
+									"      rotation_period: { type: \"string\" },",
+									"      orbital_period: { type: \"string\" },",
+									"      diameter: { type: \"string\" },",
+									"      climate: { type: \"string\" },",
+									"      gravity: { type: \"string\" },",
+									"      terrain: { type: \"string\" },",
+									"      surface_water: { type: \"string\" },",
+									"      population: { type: \"string\" },",
+									"      residents: { type: \"array\" },",
+									"      films: { type: \"array\" },",
+									"      created: { type: \"string\" },",
+									"      edited: { type: \"string\" },",
+									"      url: { type: \"string\" }",
+									"    },",
+									"    required: [\"name\", \"rotation_period\", \"orbital_period\", \"diameter\", \"climate\", \"gravity\", \"terrain\", \"surface_water\", \"population\", \"residents\", \"films\", \"created\", \"edited\", \"url\"],",
+									"  };",
+									"",
+									"  pm.expect(tv4.validate(pm.response.json(), schema)).to.be.true;",
+									"});",
+									"",
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+									"    .tftable tr {background-color:#ffffff;}",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+									"    .tftable tr:hover {background-color:#e0ffff;}",
+									"</style>",
+									"",
+									"<table class=\"tftable\" border=\"1\">",
+									"    <tr>",
+									"        <th>Name</th>",
+									"        <td>{{response.name}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <th>Rotation Period</th>",
+									"        <td>{{response.rotation_period}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <th>Orbital Period</th>",
+									"        <td>{{response.orbital_period}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <th>Diameter</th>",
+									"        <td>{{response.diameter}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <th>Climate</th>",
+									"        <td>{{response.climate}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <th>Gravity</th>",
+									"        <td>{{response.gravity}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <th>Terrain</th>",
+									"        <td>{{response.terrain}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <th>Surface Water</th>",
+									"        <td>{{response.surface_water}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <th>Population</th>",
+									"        <td>{{response.population}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <th>Residents</th>",
+									"        <td>{{response.residents}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <th>Films</th>",
+									"        <td>{{response.films}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <th>Created</th>",
+									"        <td>{{response.created}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <th>Edited</th>",
+									"        <td>{{response.edited}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <th>URL</th>",
+									"        <td>{{response.url}}</td>",
+									"    </tr>",
+									"</table>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    return { response: pm.response.json() }",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"url": {
+							"raw": "{{Swapibase}}/api/planets/3/",
+							"host": [
+								"{{Swapibase}}"
+							],
+							"path": [
+								"api",
+								"planets",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Films",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+									"    .tftable tr {background-color:#ffffff;}",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+									"    .tftable tr:hover {background-color:#e0ffff;}",
+									"</style>",
+									"",
+									"<table class=\"tftable\" border=\"1\">",
+									"    <tr>",
+									"        <th>Title</th>",
+									"        <th>Episode ID</th>",
+									"        <th>Director</th>",
+									"        <th>Producer</th>",
+									"        <th>Release Date</th>",
+									"    </tr>",
+									"    <tr>",
+									"        <td>{{response.title}}</td>",
+									"        <td>{{response.episode_id}}</td>",
+									"        <td>{{response.director}}</td>",
+									"        <td>{{response.producer}}</td>",
+									"        <td>{{response.release_date}}</td>",
+									"    </tr>",
+									"</table>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    return {response: pm.response.json()}",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Swapibase}}/api/films/3/",
+							"host": [
+								"{{Swapibase}}"
+							],
+							"path": [
+								"api",
+								"films",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Startship",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Swapibase}}/api/starships/3/",
+							"host": [
+								"{{Swapibase}}"
+							],
+							"path": [
+								"api",
+								"starships",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Characters",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var template = `",
+									"<style type=\"text/css\">",
+									"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+									"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+									"    .tftable tr {background-color:#ffffff;}",
+									"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+									"    .tftable tr:hover {background-color:#e0ffff;}",
+									"</style>",
+									"",
+									"<table class=\"tftable\" border=\"1\">",
+									"    <tr>",
+									"        <th>Property</th>",
+									"        <th>Value</th>",
+									"    </tr>",
+									"    <tr>",
+									"        <td>Name</td>",
+									"        <td>{{response.name}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <td>Classification</td>",
+									"        <td>{{response.classification}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <td>Designation</td>",
+									"        <td>{{response.designation}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <td>Average Height</td>",
+									"        <td>{{response.average_height}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <td>Skin Colors</td>",
+									"        <td>{{response.skin_colors}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <td>Hair Colors</td>",
+									"        <td>{{response.hair_colors}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <td>Eye Colors</td>",
+									"        <td>{{response.eye_colors}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <td>Average Lifespan</td>",
+									"        <td>{{response.average_lifespan}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <td>Homeworld</td>",
+									"        <td>{{response.homeworld}}</td>",
+									"    </tr>",
+									"    <tr>",
+									"        <td>Language</td>",
+									"        <td>{{response.language}}</td>",
+									"    </tr>",
+									"</table>",
+									"`;",
+									"",
+									"function constructVisualizerPayload() {",
+									"    return {response: pm.response.json()};",
+									"}",
+									"",
+									"pm.visualizer.set(template, constructVisualizerPayload());",
+									"",
+									"pm.test(\"Response status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response time is less than 200ms\", function () {",
+									"  pm.expect(pm.response.responseTime).to.be.below(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response has the required fields\", function () {",
+									"  const responseData = pm.response.json();",
+									"  ",
+									"  pm.expect(responseData).to.be.an('object');",
+									"  pm.expect(responseData).to.include.all.keys(",
+									"    'name', 'classification', 'designation', 'average_height', ",
+									"    'skin_colors', 'hair_colors', 'eye_colors', 'average_lifespan', ",
+									"    'homeworld', 'language'",
+									"  );",
+									"});",
+									"",
+									"",
+									"pm.test(\"People array is present and contains expected number of elements\", function () {",
+									"    const responseData = pm.response.json();",
+									"    ",
+									"    pm.expect(responseData).to.be.an('object');",
+									"    pm.expect(responseData.people).to.be.an('array');",
+									"    pm.expect(responseData.people.length).to.equal(1);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Films array is present and contains expected number of elements\", function () {",
+									"    const responseData = pm.response.json();",
+									"    ",
+									"    pm.expect(responseData).to.be.an('object');",
+									"    pm.expect(responseData.films).to.be.an('array').and.to.have.lengthOf.at.least(1);",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Swapibase}}/api/species/3/",
+							"host": [
+								"{{Swapibase}}"
+							],
+							"path": [
+								"api",
+								"species",
+								"3",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Vehicles",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{Swapibase}}/api/vehicles/4/",
+							"host": [
+								"{{Swapibase}}"
+							],
+							"path": [
+								"api",
+								"vehicles",
+								"4",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Reqres",
+			"item": [
+				{
+					"name": "GET",
+					"item": [
+						{
+							"name": "User Single",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var template = `",
+											"<style type=\"text/css\">",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+											"    .tftable tr {background-color:#ffffff;}",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+											"    .tftable tr:hover {background-color:#e0ffff;}",
+											"</style>",
+											"",
+											"<table class=\"tftable\" border=\"1\">",
+											"    <tr>",
+											"        <th>ID</th>",
+											"        <th>Email</th>",
+											"        <th>First Name</th>",
+											"        <th>Last Name</th>",
+											"        <th>Avatar</th>",
+											"    </tr>",
+											"    ",
+											"    <tr>",
+											"        <td>{{response.data.id}}</td>",
+											"        <td>{{response.data.email}}</td>",
+											"        <td>{{response.data.first_name}}</td>",
+											"        <td>{{response.data.last_name}}</td>",
+											"        <td>{{response.data.avatar}}</td>",
+											"    </tr>",
+											"</table>",
+											"`;",
+											"",
+											"function constructVisualizerPayload() {",
+											"    return {response: pm.response.json()}",
+											"}",
+											"",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Reqresbase}}/api/users/6",
+									"host": [
+										"{{Reqresbase}}"
+									],
+									"path": [
+										"api",
+										"users",
+										"6"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User List",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"pm.test(\"Status code is 200\", function () {",
+											"    pm.response.to.have.status(200);",
+											"});",
+											"",
+											"pm.test(\"Response content type is application/json\", function () {",
+											"    pm.expect(pm.response.headers.get(\"Content-Type\")).to.include(\"application/json\");",
+											"});",
+											"",
+											"var template = `",
+											"<canvas id=\"myChart\" height=\"75\"></canvas>",
+											"",
+											"<script src=\"https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js\"></script> ",
+											"",
+											"<script>",
+											"    var ctx = document.getElementById(\"myChart\");",
+											"",
+											"    var myChart = new Chart(ctx, {",
+											"        type: \"bar\",",
+											"        data: {",
+											"            labels: [\"Page\", \"Per Page\", \"Total\", \"Total Pages\"],",
+											"            datasets: [{",
+											"                data: [{{response.page}}, {{response.per_page}}, {{response.total}}, {{response.total_pages}}],",
+											"                ",
+											"                // Change these colours to customize the chart",
+											"                backgroundColor: [\"#003f5c\", \"#58508d\", \"#bc5090\", \"#ff6361\"],",
+											"            }]",
+											"        },",
+											"        options: {",
+											"            legend: { display: false },",
+											"            title: {",
+											"                display: true,",
+											"                text: 'Response Data'",
+											"            }",
+											"        }",
+											"    });",
+											"",
+											"    // Access the data passed to pm.visualizer.set() from the JavaScript",
+											"    // code of the Visualizer template",
+											"    pm.getData(function (err, value) {",
+											"        myChart.update();",
+											"    });",
+											"",
+											"</script>`;",
+											"",
+											"function constructVisualizerPayload() {",
+											"    return {response: pm.response.json()}",
+											"}",
+											"",
+											"pm.visualizer.set(template, constructVisualizerPayload());",
+											"// Test to validate the response against a JSON schema",
+											"pm.test(\"Response matches the JSON schema\", function() {",
+											"    var schema = {",
+											"        type: \"object\",",
+											"        properties: {",
+											"            page: { type: \"number\" },",
+											"            per_page: { type: \"number\" },",
+											"            total: { type: \"number\" },",
+											"            total_pages: { type: \"number\" },",
+											"            data: {",
+											"                type: \"array\",",
+											"                items: {",
+											"                    type: \"object\",",
+											"                    properties: {",
+											"                        id: { type: \"number\" },",
+											"                        email: { type: \"string\" },",
+											"                        first_name: { type: \"string\" },",
+											"                        last_name: { type: \"string\" },",
+											"                        avatar: { type: \"string\" }",
+											"                    },",
+											"                    required: [\"id\", \"email\", \"first_name\", \"last_name\", \"avatar\"]",
+											"                }",
+											"            },",
+											"            support: {",
+											"                type: \"object\",",
+											"                properties: {",
+											"                    url: { type: \"string\" },",
+											"                    text: { type: \"string\" }",
+											"                },",
+											"                required: [\"url\", \"text\"]",
+											"            }",
+											"        },",
+											"        required: [\"page\", \"per_page\", \"total\", \"total_pages\", \"data\", \"support\"]",
+											"    };",
+											"",
+											"    pm.expect(tv4.validate(pm.response.json(), schema)).to.be.true;",
+											"});",
+											"",
+											"pm.test(\"Response has the required fields\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData).to.have.property('page');",
+											"    pm.expect(responseData).to.have.property('per_page');",
+											"    pm.expect(responseData).to.have.property('total');",
+											"    pm.expect(responseData).to.have.property('total_pages');",
+											"    pm.expect(responseData).to.have.property('data');",
+											"    pm.expect(responseData).to.have.property('support');",
+											"});",
+											"",
+											"",
+											"pm.test(\"Email in the 'data' array is in a valid email format\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    responseData.data.forEach(function(user) {",
+											"        pm.expect(user.email).to.be.a('string').and.to.match(/^.+@.+\\..+$/);",
+											"    });",
+											"});",
+											"",
+											"",
+											"pm.test(\"Data array is present and contains expected number of elements\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData).to.be.an('object');",
+											"    pm.expect(responseData.data).to.exist.and.to.be.an('array');",
+											"    pm.expect(responseData.data.length).to.equal(1);",
+											"});",
+											"",
+											"",
+											"pm.test(\"First and last names in data array are non-empty strings\", function () {",
+											"  const responseData = pm.response.json();",
+											"",
+											"  pm.expect(responseData.data).to.be.an('array');",
+											"  responseData.data.forEach(function(user) {",
+											"    pm.expect(user.first_name).to.be.a('string').and.to.have.lengthOf.at.least(1, \"First name should not be empty\");",
+											"    pm.expect(user.last_name).to.be.a('string').and.to.have.lengthOf.at.least(1, \"Last name should not be empty\");",
+											"  });",
+											"});",
+											"",
+											"",
+											"pm.test(\"Support object has non-empty 'url' and 'text' properties\", function () {",
+											"    const responseData = pm.response.json();",
+											"    ",
+											"    pm.expect(responseData.support).to.be.an('object');",
+											"    pm.expect(responseData.support.url).to.exist.and.to.have.lengthOf.at.least(1, \"URL should not be empty\");",
+											"    pm.expect(responseData.support.text).to.exist.and.to.have.lengthOf.at.least(1, \"Text should not be empty\");",
+											"});",
+											"",
+											""
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Reqresbase}}/api/users?page=1",
+									"host": [
+										"{{Reqresbase}}"
+									],
+									"path": [
+										"api",
+										"users"
+									],
+									"query": [
+										{
+											"key": "page",
+											"value": "1"
+										}
+									]
+								},
+								"description": "The API endpoint retrieves a list of users with pagination, where the \"page\" parameter specifies the page number to retrieve. The response returns a JSON object with the following structure:\n\n``` json\n{\n  \"page\": 0,\n  \"per_page\": 0,\n  \"total\": 0,\n  \"total_pages\": 0,\n  \"data\": [\n    {\n      \"id\": 0,\n      \"email\": \"\",\n      \"first_name\": \"\",\n      \"last_name\": \"\",\n      \"avatar\": \"\"\n    }\n  ],\n  \"support\": {\n    \"url\": \"\",\n    \"text\": \"\"\n  }\n}\n\n ```\n\nThis JSON schema represents the structure of the response returned by the API endpoint."
+							},
+							"response": []
+						},
+						{
+							"name": "User List Resources",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var template = `",
+											"<style type=\"text/css\">",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+											"    .tftable tr {background-color:#ffffff;}",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+											"    .tftable tr:hover {background-color:#e0ffff;}",
+											"</style>",
+											"",
+											"<table class=\"tftable\" border=\"1\">",
+											"    <tr>",
+											"        <th>ID</th>",
+											"        <th>Name</th>",
+											"        <th>Year</th>",
+											"        <th>Color</th>",
+											"        <th>Pantone Value</th>",
+											"    </tr>",
+											"    ",
+											"    {{#each response.data}}",
+											"        <tr id=row_{{@key}}>",
+											"            <td>{{id}}</td>",
+											"            <td>{{name}}</td>",
+											"            <td>{{year}}</td>",
+											"            <td>{{color}}</td>",
+											"            <td>{{pantone_value}}</td>",
+											"        </tr>",
+											"    {{/each}}",
+											"</table>",
+											"`;",
+											"",
+											"function constructVisualizerPayload() {",
+											"    return {response: pm.response.json()}",
+											"}",
+											"",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Reqresbase}}/api/unkown",
+									"host": [
+										"{{Reqresbase}}"
+									],
+									"path": [
+										"api",
+										"unkown"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Resource Single",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Reqresbase}}/api/unkown/12",
+									"host": [
+										"{{Reqresbase}}"
+									],
+									"path": [
+										"api",
+										"unkown",
+										"12"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "User Single Notfound",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{Reqresbase}}/api/unkown/13",
+									"host": [
+										"{{Reqresbase}}"
+									],
+									"path": [
+										"api",
+										"unkown",
+										"13"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "POST",
+					"item": [
+						{
+							"name": "Single Users",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var template = `",
+											"<style type=\"text/css\">",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+											"    .tftable tr {background-color:#ffffff;}",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+											"    .tftable tr:hover {background-color:#e0ffff;}",
+											"</style>",
+											"",
+											"<table class=\"tftable\" border=\"1\">",
+											"    <tr>",
+											"        <th>Name</th>",
+											"        <th>Job</th>",
+											"        <th>Address</th>",
+											"        <th>ID</th>",
+											"        <th>Created At</th>",
+											"    </tr>",
+											"    <tr>",
+											"        <td>{{response.name}}</td>",
+											"        <td>{{response.job}}</td>",
+											"        <td>{{response.address}}</td>",
+											"        <td>{{response.id}}</td>",
+											"        <td>{{response.createdAt}}</td>",
+											"    </tr>",
+											"</table>",
+											"`;",
+											"",
+											"function constructVisualizerPayload() {",
+											"    return {response: pm.response.json()}",
+											"}",
+											"",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Wartadi\",\n    \"job\": \"CMO\",\n    \"address\": \"Miami\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Reqresbase}}/api/persons/2",
+									"host": [
+										"{{Reqresbase}}"
+									],
+									"path": [
+										"api",
+										"persons",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Laptop",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var template = `",
+											"<style type=\"text/css\">",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+											"    .tftable tr {background-color:#ffffff;}",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+											"    .tftable tr:hover {background-color:#e0ffff;}",
+											"</style>",
+											"",
+											"<table class=\"tftable\" border=\"1\">",
+											"    <tr>",
+											"        <th>Name</th>",
+											"        <th>Job</th>",
+											"        <th>Address</th>",
+											"        <th>ID</th>",
+											"        <th>Created At</th>",
+											"    </tr>",
+											"    <tr>",
+											"        <td>{{response.name}}</td>",
+											"        <td>{{response.job}}</td>",
+											"        <td>{{response.address}}</td>",
+											"        <td>{{response.id}}</td>",
+											"        <td>{{response.createdAt}}</td>",
+											"    </tr>",
+											"</table>",
+											"`;",
+											"",
+											"function constructVisualizerPayload() {",
+											"    return {response: pm.response.json()}",
+											"}",
+											"",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Macbook Pro\",\n    \"ios\": \"MacOs\",\n    \"company\": \"Apple\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Reqresbase}}/api/laptop/2",
+									"host": [
+										"{{Reqresbase}}"
+									],
+									"path": [
+										"api",
+										"laptop",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Rilis",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var template = `",
+											"<style type=\"text/css\">",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+											"    .tftable tr {background-color:#ffffff;}",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+											"    .tftable tr:hover {background-color:#e0ffff;}",
+											"</style>",
+											"",
+											"<table class=\"tftable\" border=\"1\">",
+											"    <tr>",
+											"        <th>Name</th>",
+											"        <th>Job</th>",
+											"        <th>Address</th>",
+											"        <th>ID</th>",
+											"        <th>Created At</th>",
+											"    </tr>",
+											"    <tr>",
+											"        <td>{{response.name}}</td>",
+											"        <td>{{response.job}}</td>",
+											"        <td>{{response.address}}</td>",
+											"        <td>{{response.id}}</td>",
+											"        <td>{{response.createdAt}}</td>",
+											"    </tr>",
+											"</table>",
+											"`;",
+											"",
+											"function constructVisualizerPayload() {",
+											"    return {response: pm.response.json()}",
+											"}",
+											"",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"tahun_rilis\": \"2023\",\n    \"laptop\": \"Macbook Pro\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Reqresbase}}/api/rilis/2",
+									"host": [
+										"{{Reqresbase}}"
+									],
+									"path": [
+										"api",
+										"rilis",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Event",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var template = `",
+											"<style type=\"text/css\">",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+											"    .tftable tr {background-color:#ffffff;}",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+											"    .tftable tr:hover {background-color:#e0ffff;}",
+											"</style>",
+											"",
+											"<table class=\"tftable\" border=\"1\">",
+											"    <tr>",
+											"        <th>Name</th>",
+											"        <th>Job</th>",
+											"        <th>Address</th>",
+											"        <th>ID</th>",
+											"        <th>Created At</th>",
+											"    </tr>",
+											"    <tr>",
+											"        <td>{{response.name}}</td>",
+											"        <td>{{response.job}}</td>",
+											"        <td>{{response.address}}</td>",
+											"        <td>{{response.id}}</td>",
+											"        <td>{{response.createdAt}}</td>",
+											"    </tr>",
+											"</table>",
+											"`;",
+											"",
+											"function constructVisualizerPayload() {",
+											"    return {response: pm.response.json()}",
+											"}",
+											"",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"acara\": \"Konser\",\n    \"lokasi\": \"Pasar Kemis\",\n    \"guest_star\": \"Bruno Mars\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Reqresbase}}/api/event/2",
+									"host": [
+										"{{Reqresbase}}"
+									],
+									"path": [
+										"api",
+										"event",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Rate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var template = `",
+											"<style type=\"text/css\">",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+											"    .tftable tr {background-color:#ffffff;}",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+											"    .tftable tr:hover {background-color:#e0ffff;}",
+											"</style>",
+											"",
+											"<table class=\"tftable\" border=\"1\">",
+											"    <tr>",
+											"        <th>Name</th>",
+											"        <th>Job</th>",
+											"        <th>Address</th>",
+											"        <th>ID</th>",
+											"        <th>Created At</th>",
+											"    </tr>",
+											"    <tr>",
+											"        <td>{{response.name}}</td>",
+											"        <td>{{response.job}}</td>",
+											"        <td>{{response.address}}</td>",
+											"        <td>{{response.id}}</td>",
+											"        <td>{{response.createdAt}}</td>",
+											"    </tr>",
+											"</table>",
+											"`;",
+											"",
+											"function constructVisualizerPayload() {",
+											"    return {response: pm.response.json()}",
+											"}",
+											"",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"rate\": \"Rp. 25000.00\",\n    \"artist\": \"Bruno Mars\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Reqresbase}}/api/rate/2",
+									"host": [
+										"{{Reqresbase}}"
+									],
+									"path": [
+										"api",
+										"rate",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "PUT",
+					"item": [
+						{
+							"name": "Single Users",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Wartadi\",\n    \"job\": \"CFO\",\n    \"address\": \"Las Vegas\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Reqresbase}}/api/persons/2",
+									"host": [
+										"{{Reqresbase}}"
+									],
+									"path": [
+										"api",
+										"persons",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Laptop",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var template = `",
+											"<style type=\"text/css\">",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+											"    .tftable tr {background-color:#ffffff;}",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+											"    .tftable tr:hover {background-color:#e0ffff;}",
+											"</style>",
+											"",
+											"<table class=\"tftable\" border=\"1\">",
+											"    <tr>",
+											"        <th>Name</th>",
+											"        <th>Job</th>",
+											"        <th>Address</th>",
+											"        <th>ID</th>",
+											"        <th>Created At</th>",
+											"    </tr>",
+											"    <tr>",
+											"        <td>{{response.name}}</td>",
+											"        <td>{{response.job}}</td>",
+											"        <td>{{response.address}}</td>",
+											"        <td>{{response.id}}</td>",
+											"        <td>{{response.createdAt}}</td>",
+											"    </tr>",
+											"</table>",
+											"`;",
+											"",
+											"function constructVisualizerPayload() {",
+											"    return {response: pm.response.json()}",
+											"}",
+											"",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"name\": \"Macbook Pro\",\n    \"ios\": \"Dell\",\n    \"company\": \"Nusantara Indah\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Reqresbase}}/api/laptop/2",
+									"host": [
+										"{{Reqresbase}}"
+									],
+									"path": [
+										"api",
+										"laptop",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Event",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var template = `",
+											"<style type=\"text/css\">",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+											"    .tftable tr {background-color:#ffffff;}",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+											"    .tftable tr:hover {background-color:#e0ffff;}",
+											"</style>",
+											"",
+											"<table class=\"tftable\" border=\"1\">",
+											"    <tr>",
+											"        <th>Name</th>",
+											"        <th>Job</th>",
+											"        <th>Address</th>",
+											"        <th>ID</th>",
+											"        <th>Created At</th>",
+											"    </tr>",
+											"    <tr>",
+											"        <td>{{response.name}}</td>",
+											"        <td>{{response.job}}</td>",
+											"        <td>{{response.address}}</td>",
+											"        <td>{{response.id}}</td>",
+											"        <td>{{response.createdAt}}</td>",
+											"    </tr>",
+											"</table>",
+											"`;",
+											"",
+											"function constructVisualizerPayload() {",
+											"    return {response: pm.response.json()}",
+											"}",
+											"",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"acara\": \"Konser\",\n    \"lokasi\": \"Tanjung Priuk\",\n    \"guest_star\": \"The Weeknd\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Reqresbase}}/api/event/2",
+									"host": [
+										"{{Reqresbase}}"
+									],
+									"path": [
+										"api",
+										"event",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Rilis",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var template = `",
+											"<style type=\"text/css\">",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+											"    .tftable tr {background-color:#ffffff;}",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+											"    .tftable tr:hover {background-color:#e0ffff;}",
+											"</style>",
+											"",
+											"<table class=\"tftable\" border=\"1\">",
+											"    <tr>",
+											"        <th>Name</th>",
+											"        <th>Job</th>",
+											"        <th>Address</th>",
+											"        <th>ID</th>",
+											"        <th>Created At</th>",
+											"    </tr>",
+											"    <tr>",
+											"        <td>{{response.name}}</td>",
+											"        <td>{{response.job}}</td>",
+											"        <td>{{response.address}}</td>",
+											"        <td>{{response.id}}</td>",
+											"        <td>{{response.createdAt}}</td>",
+											"    </tr>",
+											"</table>",
+											"`;",
+											"",
+											"function constructVisualizerPayload() {",
+											"    return {response: pm.response.json()}",
+											"}",
+											"",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"tahun_rilis\": \"2023\",\n    \"laptop\": \"Dell\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Reqresbase}}/api/rilis/2",
+									"host": [
+										"{{Reqresbase}}"
+									],
+									"path": [
+										"api",
+										"rilis",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Rate",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"var template = `",
+											"<style type=\"text/css\">",
+											"    .tftable {font-size:14px;color:#333333;width:100%;border-width: 1px;border-color: #87ceeb;border-collapse: collapse;}",
+											"    .tftable th {font-size:18px;background-color:#87ceeb;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;text-align:left;}",
+											"    .tftable tr {background-color:#ffffff;}",
+											"    .tftable td {font-size:14px;border-width: 1px;padding: 8px;border-style: solid;border-color: #87ceeb;}",
+											"    .tftable tr:hover {background-color:#e0ffff;}",
+											"</style>",
+											"",
+											"<table class=\"tftable\" border=\"1\">",
+											"    <tr>",
+											"        <th>Name</th>",
+											"        <th>Job</th>",
+											"        <th>Address</th>",
+											"        <th>ID</th>",
+											"        <th>Created At</th>",
+											"    </tr>",
+											"    <tr>",
+											"        <td>{{response.name}}</td>",
+											"        <td>{{response.job}}</td>",
+											"        <td>{{response.address}}</td>",
+											"        <td>{{response.id}}</td>",
+											"        <td>{{response.createdAt}}</td>",
+											"    </tr>",
+											"</table>",
+											"`;",
+											"",
+											"function constructVisualizerPayload() {",
+											"    return {response: pm.response.json()}",
+											"}",
+											"",
+											"pm.visualizer.set(template, constructVisualizerPayload());"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"rate\": \"Rp. 25000.00\",\n    \"artist\": \"The Weeknd\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Reqresbase}}/api/rate/2",
+									"host": [
+										"{{Reqresbase}}"
+									],
+									"path": [
+										"api",
+										"rate",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "DELETE",
+					"item": [
+						{
+							"name": "Single Users",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{Reqresbase}}/api/persons/2",
+									"host": [
+										"{{Reqresbase}}"
+									],
+									"path": [
+										"api",
+										"persons",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Laptop",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{Reqresbase}}/api/laptop/2",
+									"host": [
+										"{{Reqresbase}}"
+									],
+									"path": [
+										"api",
+										"laptop",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Rilis",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{Reqresbase}}/api/rilis/2",
+									"host": [
+										"{{Reqresbase}}"
+									],
+									"path": [
+										"api",
+										"rilis",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Event",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{Reqresbase}}/api/event/2",
+									"host": [
+										"{{Reqresbase}}"
+									],
+									"path": [
+										"api",
+										"event",
+										"2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Rate",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{Reqresbase}}/api/rate/2",
+									"host": [
+										"{{Reqresbase}}"
+									],
+									"path": [
+										"api",
+										"rate",
+										"2"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}
