@@ -1,0 +1,126 @@
+import pandas as pd
+from fastparquet import ParquetFile
+from sqlalchemy import create_engine, text
+from sqlalchemy.types import BigInteger, DateTime, Boolean, Float, Integer
+from sqlalchemy.exc import SQLAlchemyError
+from table_formatter import print_table  # Import fungsi print_table
+import sys
+import os
+from table_formatter import print_table
+# Menambahkan path direktori 'src' ke sys.path
+sys.path.append(os.path.dirname(__file__))
+
+
+
+class Extraction:
+    def __init__(self) -> None:
+        self.path: str
+        self.dataframe = pd.DataFrame()
+
+    def local_file(self, path: str) -> pd.DataFrame:
+        """Task 1: Membaca file Parquet dan memproses DataFrame by Wartadi DE4"""
+        self.path = path
+        self.__read_parquetfile()
+        
+        # Task 1: Menampilkan DataFrame setelah dibaca dari file Parquet
+        print("\n=== Task 1: DataFrame dari file Parquet by Wartadi DE4 ===")
+        print_table(self.dataframe.head(10))  # Menampilkan 10 baris pertama
+
+        # Task 2: Menampilkan DataFrame sebelum dibersihkan dan di-cast
+        print("\n=== Task 2: DataFrame dari file Parquet sebelum dibersihkan dan di-cast by Wartadi DE4 ===")
+        print_table(self.dataframe.head(10))  # Gunakan print_table
+        
+        # Task 3: Membersihkan dataset
+        self.clean_data()
+        print("\n=== Task 3: DataFrame setelah dibersihkan by Wartadi DE4 ===")
+        print_table(self.dataframe.head(10))  # Gunakan print_table
+        
+        # Task 4: Menentukan skema tipe data dan meng-cast kolom
+        self.cast_data()
+        print("\n=== Task 4: Informasi Schema DataFrame setelah di-cast by Wartadi DE4 ===")
+        print(self.dataframe.info())
+        
+        # Task 5: Menampilkan DataFrame setelah di-cast
+        print("\n=== Task 5: DataFrame setelah di-cast by Wartadi DE4 ===")
+        
+        return self.dataframe
+    
+    def __read_parquetfile(self) -> None:
+        """Task 2: Membaca file Parquet menjadi DataFrame by Wartadi DE4"""
+        parquetfile = ParquetFile(self.path)
+        self.dataframe = parquetfile.to_pandas()
+
+    def clean_data(self) -> None:
+        """Task 3: Membersihkan DataFrame dari nilai NaN, duplikat, dan data invalid by Wartadi DE4"""
+        self.dataframe.dropna(inplace=True)
+        self.dataframe.drop_duplicates(inplace=True)
+        self.dataframe = self.dataframe[self.dataframe["trip_distance"] >= 0]
+
+    def cast_data(self) -> None:
+        """Task 4: Meng-cast kolom DataFrame ke tipe data yang sesuai by Wartadi DE4"""
+        self.dataframe["passenger_count"] = self.dataframe["passenger_count"].astype("Int8")
+        self.dataframe["store_and_fwd_flag"] = self.dataframe["store_and_fwd_flag"].map({"N": False, "Y": True}).astype("boolean")
+        self.dataframe["tpep_pickup_datetime"] = pd.to_datetime(self.dataframe["tpep_pickup_datetime"])
+        self.dataframe["tpep_dropoff_datetime"] = pd.to_datetime(self.dataframe["tpep_dropoff_datetime"])
+
+class Load:
+    def __init__(self) -> None:
+        self.engine = None
+    
+    def __create_connection(self) -> None:
+        """Task 5: Membuat koneksi ke database PostgreSQL by Wartadi DE4"""
+        user = "postgres"
+        password = "admin"
+        host = "localhost"
+        database = "mydb"
+        port = 5434
+        conn_string = f"postgresql://{user}:{password}@{host}:{port}/{database}"
+        self.engine = create_engine(conn_string) 
+
+    def to_postgres(self, db_name: str, data: pd.DataFrame) -> None:
+        """Task 6: Mengimpor DataFrame ke dalam database PostgreSQL by Wartadi DE4"""
+        self.__create_connection()
+        df_schema = {
+            "VendorID": BigInteger,
+            "tpep_pickup_datetime": DateTime,
+            "tpep_dropoff_datetime": DateTime,
+            "passenger_count": BigInteger,
+            "trip_distance": Float,
+            "RatecodeID": Float,
+            "store_and_fwd_flag": Boolean,
+            "PULocationID": Integer,
+            "DOLocationID": Integer,
+            "payment_type": Integer,
+            "fare_amount": Float,
+            "extra": Float,
+            "mta_tax": Float,
+            "tip_amount": Float,
+            "tolls_amount": Float,
+            "improvement_surcharge": Float,
+            "total_amount": Float,
+            "congestion_surcharge": Float,
+            "airport_fee": Float
+        }
+        try:
+            data.to_sql(name=db_name, con=self.engine, if_exists="replace", index=False, schema="public", dtype=df_schema, method=None, chunksize=5000)
+            
+            # Task 6: Menghitung dan menampilkan jumlah baris yang di-ingest
+            with self.engine.connect() as connection:
+                result = connection.execute(text(f"SELECT COUNT(*) FROM public.{db_name}"))
+                row_count = result.scalar()
+                print(f"\n=== Task 6: Jumlah baris yang di-ingest by Wartadi DE4 ===")
+                print(f"Jumlah baris yang di-ingest: {row_count}")
+        except SQLAlchemyError as err:
+            print(f"error >> {err}")
+
+def main():
+    extract = Extraction()
+    file_path = "/Users/wartadi/Desktop/alta/ingestion-data-main/dataset/yellow_tripdata_2023-01.parquet"
+    df_result = extract.local_file(file_path)
+    
+    load = Load()
+    db_name = "data_parquet_by_wartadi"
+    load.to_postgres(db_name, df_result)
+
+if __name__ == "__main__":
+    main()

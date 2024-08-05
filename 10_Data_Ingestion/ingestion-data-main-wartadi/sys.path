@@ -1,0 +1,7 @@
+import sys
+import os
+
+# Menambahkan direktori saat ini ke sys.path
+sys.path.append(os.path.dirname(os.path.abspath(__file__)))
+
+from table_formatting import print_table_with_index, print_table_with_summary
