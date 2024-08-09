@@ -1,0 +1,1 @@
+TOPIC="wartadi_stock_avro_topic"
