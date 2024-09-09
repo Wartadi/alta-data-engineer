@@ -1,0 +1,71 @@
+[0m22:02:56.428611 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112373310>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112415c90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112385410>]}
+
+
+============================== 22:02:56.440055 | bab6ea6b-6ff8-40c1-866c-8b70749a3719 ==============================
+[0m22:02:56.440055 [info ] [MainThread]: Running with dbt=1.7.0
+[0m22:02:56.441864 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/wartadi/Desktop/alta/dbt-demo/my_project/dbt_project.yml', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'warn_error': 'None', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'static_parser': 'True', 'log_format': 'default', 'target_path': 'None', 'invocation_command': 'dbt run --profiles-dir /Users/wartadi/Desktop/alta/dbt-demo/my_project/dbt_project.yml', 'send_anonymous_usage_stats': 'True'}
+[0m22:02:56.443654 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/wartadi/Desktop/alta/dbt-demo/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:02:56.450351 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112337690>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1124087d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112408f50>]}
+[0m22:02:56.451493 [debug] [MainThread]: Flushing usage events
+[0m22:18:21.410660 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106091dd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x106069cd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10606a990>]}
+
+
+============================== 22:18:21.423966 | f8a98000-0379-4d19-aebc-117caa98b370 ==============================
+[0m22:18:21.423966 [info ] [MainThread]: Running with dbt=1.7.0
+[0m22:18:21.426376 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'profiles_dir': '/Users/wartadi/Desktop/alta/dbt-demo/dbt-profiles', 'version_check': 'True', 'debug': 'False', 'log_path': 'logs', 'warn_error': 'None', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'target_path': 'None', 'invocation_command': 'dbt run', 'send_anonymous_usage_stats': 'True'}
+[0m22:18:21.427594 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/wartadi/Desktop/alta/dbt-demo/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:18:21.432384 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105a27fd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105957e50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x105d79c50>]}
+[0m22:18:21.434029 [debug] [MainThread]: Flushing usage events
+[0m00:39:47.850846 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11286fb50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11229e750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11229c290>]}
+
+
+============================== 00:39:47.861617 | 066f04aa-6bf0-42af-a969-48dc598d13f8 ==============================
+[0m00:39:47.861617 [info ] [MainThread]: Running with dbt=1.7.0
+[0m00:39:47.862906 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'fail_fast': 'False', 'log_path': 'logs', 'profiles_dir': '/Users/wartadi/Desktop/alta/dbt-demo/dbt-profiles', 'debug': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'invocation_command': 'dbt deps', 'static_parser': 'True', 'introspect': 'True', 'target_path': 'None', 'log_format': 'default', 'send_anonymous_usage_stats': 'True'}
+[0m00:39:47.864902 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/wartadi/Desktop/alta/dbt-demo/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m00:39:47.869551 [debug] [MainThread]: Resource report: {"command_name": "deps", "command_wall_clock_time": 0.1044015, "process_user_time": 3.58405, "process_kernel_time": 0.611075, "process_mem_max_rss": "112304128", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m00:39:47.871705 [debug] [MainThread]: Command `dbt deps` failed at 00:39:47.871275 after 0.11 seconds
+[0m00:39:47.872600 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11229e750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11229de50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1124de710>]}
+[0m00:39:47.873428 [debug] [MainThread]: Flushing usage events
+[0m18:19:09.021316 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111aad010>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x110f4f490>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1114cad50>]}
+
+
+============================== 18:19:09.032035 | e22f3330-556a-407c-bee0-3ba3bea34f88 ==============================
+[0m18:19:09.032035 [info ] [MainThread]: Running with dbt=1.7.0
+[0m18:19:09.034252 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'profiles_dir': '/Users/wartadi/Desktop/alta/dbt-demo/dbt-profiles', 'log_path': 'logs', 'version_check': 'True', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'introspect': 'True', 'invocation_command': 'dbt run', 'log_format': 'default', 'target_path': 'None', 'static_parser': 'True', 'send_anonymous_usage_stats': 'True'}
+[0m18:19:09.035842 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/wartadi/Desktop/alta/dbt-demo/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m18:19:09.062024 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 0.151209, "process_user_time": 3.930155, "process_kernel_time": 0.51006, "process_mem_max_rss": "111996928", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m18:19:09.065214 [debug] [MainThread]: Command `dbt run` failed at 18:19:09.064229 after 0.15 seconds
+[0m18:19:09.071326 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11177db50>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1116ed250>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x111440f90>]}
+[0m18:19:09.073231 [debug] [MainThread]: Flushing usage events
+[0m22:31:52.742534 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113e430d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113e0c890>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113e0e290>]}
+
+
+============================== 22:31:52.754276 | a5363cf6-c270-4d59-8bc0-6d07264fa254 ==============================
+[0m22:31:52.754276 [info ] [MainThread]: Running with dbt=1.7.0
+[0m22:31:52.755656 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'log_cache_events': 'False', 'write_json': 'True', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'version_check': 'True', 'profiles_dir': '/Users/wartadi/Desktop/alta/dbt-demo/dbt-profiles', 'log_path': 'logs', 'debug': 'False', 'fail_fast': 'False', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'introspect': 'True', 'invocation_command': 'dbt run', 'static_parser': 'True', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m22:31:52.759028 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/wartadi/Desktop/alta/dbt-demo/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m22:31:53.773232 [debug] [MainThread]: Resource report: {"command_name": "run", "command_wall_clock_time": 1.1523752, "process_user_time": 4.385488, "process_kernel_time": 0.944062, "process_mem_max_rss": "110460928", "command_success": false, "process_in_blocks": "0", "process_out_blocks": "0"}
+[0m22:31:53.776321 [debug] [MainThread]: Command `dbt run` failed at 22:31:53.775850 after 1.16 seconds
+[0m22:31:53.778584 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x11388aa10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x112a8d710>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x113a8e710>]}
+[0m22:31:53.781524 [debug] [MainThread]: Flushing usage events

@@ -1,0 +1,36 @@
+name: 'my_project'
+version: '1.0.0'
+config-version: 2
+
+profile: 'my_project'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+clean-targets:         
+  - "target"
+  - "dbt_packages"
+
+models:
+  my_project:
+    store:
+      _stg:
+        +materialized: view
+        +schema: stg
+        +database: store
+      _int:
+        +materialized: view
+        +schema: int
+        +database: store
+      _fct:
+        +materialized: table
+        +schema: fact
+        +database: store
+      _mart:
+        +materialized: table
+        +schema: mart
+        +database: store

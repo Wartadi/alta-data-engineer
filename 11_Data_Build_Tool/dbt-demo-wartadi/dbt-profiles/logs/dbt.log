@@ -1,0 +1,13 @@
+[0m21:51:05.681827 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10aa6dd90>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c18fd10>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c366390>]}
+
+
+============================== 21:51:05.693675 | efc64fb5-3fa4-4ee2-9dd7-4851b2e9ceb8 ==============================
+[0m21:51:05.693675 [info ] [MainThread]: Running with dbt=1.7.0
+[0m21:51:05.695233 [debug] [MainThread]: running dbt with arguments {'printer_width': '80', 'indirect_selection': 'eager', 'write_json': 'True', 'log_cache_events': 'False', 'partial_parse': 'True', 'cache_selected_only': 'False', 'warn_error': 'None', 'debug': 'False', 'fail_fast': 'False', 'log_path': 'logs', 'version_check': 'True', 'profiles_dir': '/Users/wartadi/Desktop/alta/dbt-demo/dbt-profiles', 'use_colors': 'True', 'use_experimental_parser': 'False', 'no_print': 'None', 'quiet': 'False', 'log_format': 'default', 'static_parser': 'True', 'introspect': 'True', 'invocation_command': 'dbt run', 'target_path': 'None', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'send_anonymous_usage_stats': 'True'}
+[0m21:51:05.697301 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/wartadi/Desktop/alta/dbt-demo/dbt-profiles/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m21:51:06.212410 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bfd3990>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10c35f750>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10bfe8410>]}
+[0m21:51:06.213391 [debug] [MainThread]: Flushing usage events
